@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Chat Buddy</string>
-    <string name="apikey">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</string>
+    <string name="apikey">your api key here</string>
 </resources>
