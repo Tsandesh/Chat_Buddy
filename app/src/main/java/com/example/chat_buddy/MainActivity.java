@@ -30,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView msg_rv;
     ImageView btn_send;
     EditText et_question;
+    String api_key;
 
 
     List<Message> messageList;
     MessageAdapter messageAdapter;
+
 
 
     public static final MediaType JSON
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         messageList=new ArrayList<>();
 
-
+        api_key = getString(R.string.apikey);
         msg_rv =findViewById(R.id.chat_rv);
         btn_send=findViewById(R.id.btn_send);
         et_question=findViewById(R.id.et_query);
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer "+api_key)
                 .post(body)
                 .build();
 
